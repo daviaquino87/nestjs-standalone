@@ -1,7 +1,7 @@
 import { Body, Controller, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { CreateMessageDTO } from '@/main/api/messages/dtos/create-message.dto';
 import { CreateMessageUseCase } from '@/main/api/messages/use-cases/create-message/create-message.usecase';
+import { CreateMessageDTO } from '@/common/dtos/create-message.dto';
 
 @ApiTags('Messages')
 @Controller('messages')

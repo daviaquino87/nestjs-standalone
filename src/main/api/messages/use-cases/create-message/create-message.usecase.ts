@@ -1,7 +1,7 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { CreateMessageDTO } from '@/main/api/messages/dtos/create-message.dto';
 import { PublisherService } from '@/infra/rabbitmq/publisher.service';
 import { validateDTO } from '@/common/utils/validate-dto';
+import { CreateMessageDTO } from '@/common/dtos/create-message.dto';
 
 interface IExecuteInput {
   message: CreateMessageDTO;
