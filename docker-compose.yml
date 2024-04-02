@@ -1,0 +1,50 @@
+version: '3'
+
+volumes:
+  db-data:
+
+services:
+  rabbitmq:
+      image: "rabbitmq:3-management"
+      environment:
+        RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLMNEQG"
+        RABBITMQ_DEFAULT_USER: "rabbitmq_user"
+        RABBITMQ_DEFAULT_PASS: "rabbitmq_password"
+        RABBITMQ_DEFAULT_VHOST: "/"
+      healthcheck:
+        test: ["CMD", "rabbitmq-diagnostics", "check_running"]
+        interval: 10s
+        timeout: 5s
+        retries: 3
+      ports:
+        - "15672:15672"
+        - "5672:5672"
+
+  consumer:
+    user: node
+    build: .
+    env_file:
+      - .env    
+    volumes:
+      - ./:/home/node/app
+    command: "npm run start:dev:consumer"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    deploy:
+      mode: replicated
+      replicas: 2
+
+  api:
+    user: node
+    build: .
+    env_file:
+      - .env
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - "3001:3001"
+    entrypoint: "sh ./.docker/entrypoint.sh"
+    depends_on:
+      rabbitmq:
+        condition: service_healthy

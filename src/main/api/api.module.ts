@@ -13,7 +13,6 @@ import { RabbitMqModule } from '@/infra/rabbitmq/rabbitmq.module';
       isGlobal: true,
     }),
     EnvModule,
-    RabbitMqModule,
     MessagesModule,
   ],
   providers: [],
