@@ -28,6 +28,12 @@ Essa separação em módulos autônomos facilita não apenas a escalabilidade, m
 
 ## 🎲 Rodando o Backend
 
+### Criar o arquivo .env e copiar as variáveis do .env.example
+```=shell
+cp ./.env.example ./.env
+```
+* Fazer alterações quando necessário
+
 ### Rodar aplicação
 ```=shell
 docker-compose up -d 
