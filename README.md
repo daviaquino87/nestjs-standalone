@@ -6,7 +6,7 @@ This application was developed to demonstrate the concept of standalone, where e
 
 ## Demo
 
-[![Watch the video](https://miro.medium.com/v2/resize:fit:1400/1*s9kgU8F1eB7Tzs7sG0YhBg.jpeg)](https://vimeo.com/930232720)
+https://github.com/daviaquino87/nestjs-standalone/assets/53793223/3d7f7b74-2def-45f5-bb6d-7af3e3ac4c38
 
 
 ## What is a standalone application?
