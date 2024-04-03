@@ -1,61 +1,67 @@
 # NestJS Standalone
 
-Esta aplicação foi desenvolvida para demonstrar o conceito de standalone, onde cada módulo funciona de forma independente e autossuficiente.
+This application was developed to demonstrate the concept of standalone, where each module works independently and self-sufficiently.
 
 ![Badge](https://img.shields.io/badge/standalone-api-%237159c1?style=for-the-badge&logo=ghost)
 
-## O que é uma aplicação standalone ?
+<video width="320" height="240" controls>
+  <source src="./docs/demo/index.mp4" type="video/mp4">
+  Your browser does not support the element <code>video</code>.
+</video>
 
-Uma aplicação standalone, ou aplicação autônoma, é um software que pode executar de forma independente, sem a necessidade de instalação de outros programas. Normalmente, uma aplicação standalone incorpora todos os recursos e bibliotecas necessários para operar sem depender de software adicional. No contexto desta aplicação NestJS, podemos interpretar que os módulos podem funcionar de forma autônoma.
 
-## Fluxo da aplicação
-  O fluxo da aplicação no contexto do NestJS é estruturado em módulos, e cada módulo é concebido para operar de forma independente, como se fosse uma aplicação separada. Cada módulo possui seu próprio script de inicialização e é contido em seu próprio container.
+## What is a standalone application?
+
+A standalone application is software that can run independently, without the need to install other programs. Typically, a standalone application incorporates all the resources and libraries necessary to operate without relying on additional software. In the context of this NestJS application, we can interpret that the modules can work autonomously.
+
+## Application flow
+  The application flow in the context of NestJS is structured into modules, and each module is designed to operate independently, as if it were a separate application. Each module has its own initialization script and is contained in its own container.
 
   ![imagem representativa dos container](https://cdn.discordapp.com/attachments/1115324354658570261/1224730389080309780/image.png?ex=661e8e0f&is=660c190f&hm=27c6ad32ecda23935e3138330b543b3b7ed4afc4a44ae09b191012ad6c1e6c2f&)
 
-  Ao dividir a aplicação em módulos separados, cada um em seu próprio container, a comunicação entre esses serviços é mantida através de mensageria, utilizando o broker do RabbitMQ. Essa abordagem permite uma arquitetura mais distribuída e escalável, onde cada módulo pode ser dimensionado individualmente conforme necessário.
+ By dividing the application into separate modules, each in its own container, communication between these services is maintained through messaging, using the RabbitMQ broker. This approach allows for a more distributed and scalable architecture, where each module can be scaled individually as needed.
 
   ![imagem representativa da comunicação dos serviços](https://cdn.discordapp.com/attachments/1115324354658570261/1224756531099074731/image.png?ex=661ea667&is=660c3167&hm=6c944e8a3cf4ccf7c9a91c407711d52e5f7bd92a1faf9b68cfc6253c4004d65f&)
 
- Essa organização proporciona uma visão clara do ambiente de implantação da aplicação. Por exemplo, se houver a necessidade de escalar a aplicação, basta fazer uma configuração no arquivo docker-compose para especificar quantas instâncias de cada serviço são desejadas.
+This organization provides a clear view of the application deployment environment. For example, if there is a need to scale the application, simply make a configuration in the docker-compose file to specify how many instances of each service are desired.
 
-Essa separação em módulos autônomos facilita não apenas a escalabilidade, mas também a manutenção, o desenvolvimento e a depuração da aplicação, uma vez que cada parte pode ser tratada de forma independente, sem interferir nas outras. Além disso, essa abordagem promove uma arquitetura mais resiliente, onde uma falha em um módulo não afeta necessariamente o funcionamento dos outros.
+This separation into autonomous modules facilitates not only scalability, but also maintenance, development and debugging of the application, since each part can be treated independently, without interfering with the others. Furthermore, this approach promotes a more resilient architecture, where a failure in one module does not necessarily affect the functioning of the others.
 
 <hr>
 
-## 🛠️ Pré-requisitos
-* Docker e docker-compose instalados
+## 🛠️ Prerequisites
+* Docker e docker-compose installed
 
-## 🎲 Rodando o Backend
+## 🎲 Running the Backend
 
-### Criar o arquivo .env e copiar as variáveis do .env.example
+### Create the .env file and copy the variables from .env.example
 ```=shell
 cp ./.env.example ./.env
 ```
-* Fazer alterações quando necessário
+* Make changes when necessary
 
-### Rodar aplicação
+### Run application
 ```=shell
 docker-compose up -d 
 ```
 
-### Verificar logs da aplicação
+### Check application logs
 ```=shell
-docker logs -f {nome-do-container} --tail 200
+docker logs -f {container-name} --tail 200
 ```
 
-### Entrar dentro do container da aplicação
+### Enter the application container
 ```=shell
-docker exec -it {nome-do-container} sh
+docker exec -it {container-name} sh
 ```
 
-## 📖 Documentação da api
+## 📖 API documentation
 
 [Documentação](http://localhost:3001/docs)
 
-## 👨🏼‍💻 Tecnologias
+## 👨🏼‍💻 Technologies
 
-As seguintes ferramentas foram usadas na construção do projeto:
+The following tools were used to build the project:
 
 - [Node.js](https://nodejs.org/en/)
 - [Nest.js](https://docs.nestjs.com/)
@@ -63,6 +69,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Docker](https://docs.docker.com/)
 - [RabbitMq](https://www.rabbitmq.com/docs)
 
-## 🛠️ Observações
-* Instalar dependências dentro do container
-* A documentação não fica disponível caso a variável de ambiente NODE_ENV esteja como production
+## 🛠️ Comments
+* Install dependencies inside the container
+* The documentation is not available if the NODE_ENV environment variable is set to production
+
+## 🌍 Read this in other language
+- <a href="./docs/translations/pt-br.md" >🇧🇷 Português/Portuguese</a>
