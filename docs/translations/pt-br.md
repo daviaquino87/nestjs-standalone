@@ -4,10 +4,11 @@ Esta aplicação foi desenvolvida para demonstrar o conceito de standalone, onde
 
 ![Badge](https://img.shields.io/badge/standalone-api-%237159c1?style=for-the-badge&logo=ghost)
 
-<video width="320" height="240" controls>
-  <source src="./docs/demo/index.mp4" type="video/mp4">
-  Seu navegador não suporta o elemento <code>video</code>.
-</video>
+## Demonstração
+
+[![Watch the video](https://miro.medium.com/v2/resize:fit:1400/1*s9kgU8F1eB7Tzs7sG0YhBg.jpeg)](https://vimeo.com/930232720)
+
+
 
 ## O que é uma aplicação standalone ?
 
